@@ -2,6 +2,10 @@
 - hosts: " {{ env }} "
   become: yes
   tasks:
+    - name: Copy Files
+      copy:
+        src: /var/lib/jenkins/workspace/deploy-to-qa/deploy
+        dest: /home/vamsi/mytestdep
     - name: set image var
       command: export IMAGE="suryabh/samplejavaapp:V1."{{ ver }}""
     - name: Create Dep
