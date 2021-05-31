@@ -7,6 +7,6 @@
         src: /var/lib/jenkins/workspace/deploy-to-qa/deploy/.
         dest: /home/vamsi/mytestdep/
     - name: Create Dep
-      command: yq eval '.spec.template.spec.containers[0].image = "'$IMAGE'"' vamsitestdep.yml | kubectl apply -f -
+      command: cd /home/vamsi/mytestdep/deploy ; yq eval '.spec.template.spec.containers[0].image = "'$IMAGE'"' vamsitestdep.yml | kubectl apply -f -
     - name: Crate SVC
       command: kubectl apply -f vamsitestsvc.yml
