@@ -7,7 +7,7 @@
         src: /var/lib/jenkins/workspace/deploy-to-qa/deploy
         dest: /home/vamsi/mytestdep
     - name: set image var
-      command: export IMAGE="suryabh/samplejavaapp:V1."{{ ver }}""
+      command: export IMAGE=suryabh/samplejavaapp:V1."{{ ver }}"
     - name: Create Dep
       command: yq eval '.spec.template.spec.containers[0].image = "'$IMAGE'"' vamsitestdep.yml | kubectl apply -f -
     - name: Crate SVC
