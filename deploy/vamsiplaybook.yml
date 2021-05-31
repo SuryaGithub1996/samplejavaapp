@@ -4,7 +4,7 @@
   tasks:
     - name: Copy Files
       copy:
-        src: /var/lib/jenkins/workspace/deploy-to-qa/deploy/*
+        src: /var/lib/jenkins/workspace/deploy-to-qa/deploy/*.yml
         dest: /home/vamsi/mytestdep
     - name: Create Dep
       command: yq eval '.spec.template.spec.containers[0].image = "'$IMAGE'"' vamsitestdep.yml | kubectl apply -f -
