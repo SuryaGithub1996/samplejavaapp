@@ -4,8 +4,8 @@
   tasks:
     - name: Copy Files
       copy:
-        src: /var/lib/jenkins/workspace/deploy/deploy/.
+        src: /var/lib/jenkins/workspace/deploy/deploy/test-sample.yml
         dest: /home/vamsi/mytestdep/
     - name: Create a Deployment
-      command: kubectl apply -f /home/vamsi/mytestdep/deploy/test-sample.yml
+      command: kubectl apply -f /home/vamsi/mytestdep/test-sample.yml
       become_user: vamsi
