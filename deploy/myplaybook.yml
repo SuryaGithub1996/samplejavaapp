@@ -1,6 +1,6 @@
 ---
 - hosts: " {{ env }} "
-  become: vamsi
+  become: yes
   tasks:
     - name: Copy Files
       copy:
@@ -8,3 +8,4 @@
         dest: /home/vamsi/mytestdep/
     - name: Create a Deployment
       command: kubectl apply -f /home/vamsi/mytestdep/deploy/test-sample.yml
+      become_user: vamsi
