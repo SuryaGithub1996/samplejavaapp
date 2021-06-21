@@ -8,4 +8,4 @@
         dest: /home/vamsi/mytestdep/
     - name: Create a Deployment
       command: kubectl apply -f /home/vamsi/mytestdep/test-sample.yml
- ##     become_user: vamsi
+      become_user: vamsi
